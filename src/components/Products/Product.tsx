@@ -12,7 +12,7 @@ const Product = (props: any) => {
         <div className="item_list">
             <a onClick={showDetail}>
                 <figure>
-                    <img src={product.images[0].path} alt="product thumbnail"/>
+                    <img src={product.images[0]?.path} alt="product thumbnail"/>
                 </figure>
                 <h4>{product.name}</h4>
                 {

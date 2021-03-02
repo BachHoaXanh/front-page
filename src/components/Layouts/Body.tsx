@@ -10,7 +10,7 @@ interface CategoryInterface {
     count: number;
 }
 
-const Nav = (props: any) => {
+const Body = (props: any) => {
     const history = useHistory();
     const [limit, setLimit] = useState(10);
     const [loading, setLoading] = useState(false);
@@ -68,7 +68,7 @@ const Nav = (props: any) => {
             </div>
 
             <div className="f_right">
-                <div className="fl_title"><h1>Tên Danh mục</h1>
+                <div className="fl_title"><h1>Sản phẩm</h1>
                     <figure/>
                 </div>
                 <div className="box_list">
@@ -91,7 +91,7 @@ const Nav = (props: any) => {
                     {
                         loading &&
                         <div className="tab-loadmore-btn tab-loadmore-loading btn-nothover">
-                            <div className="loading-icon"></div>
+                            <div className="loading-icon"/>
                         </div>
                     }
                 </div>
@@ -101,4 +101,4 @@ const Nav = (props: any) => {
     );
 }
 
-export default Nav;
+export default Body;

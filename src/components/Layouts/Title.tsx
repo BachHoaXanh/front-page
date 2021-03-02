@@ -1,4 +1,4 @@
-const Title = () => {
+const Title = (props: any) => {
     return (
         <div className="div_title">
             <section>
@@ -6,7 +6,7 @@ const Title = () => {
                     <div itemScope itemType="http://data-vocabulary.org/Breadcrumb">
                         <a href="/" itemProp="url" title="Trang chủ" className="active">Trang chủ</a>
                     </div>
-                    <code><i className="fa fa-caret-right"/> </code>
+                    <code> - </code>
                     <div itemScope itemType="http://data-vocabulary.org/Breadcrumb">
                         <a href="san-pham.html" itemProp="url" title="Sản phẩm" className="active">Sản phẩm</a>
                     </div>

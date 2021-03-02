@@ -397,6 +397,7 @@ nav ul li ul li h2 a:hover {
   font-weight: bold;
   font-size: 1.3em;
   color: #008838;
+  text-align: left;
 }
 
 .fl_title figure {
@@ -1107,6 +1108,7 @@ nav ul li ul li h2 a:hover {
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
   font-weight: normal;
+  text-align: left;
 }
 
 .box_cate ul li h3:hover {
@@ -2323,8 +2325,8 @@ nav ul li ul li h2 a:hover {
   width: 55px;
   position: fixed;
   z-index: 2;
-  bottom: 20%;
-  left: 0
+  bottom: 25%;
+  left: 0;
 }
 
 .f_share {

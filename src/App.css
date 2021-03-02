@@ -656,6 +656,8 @@ nav ul li ul li h2 a:hover {
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+  position: relative;
+  cursor: pointer;
 }
 
 .item_r {
@@ -3240,6 +3242,75 @@ div.pagination span.disabled {
   font-weight: normal;
 }
 
+.cateLink:hover {
+  color: #008838;
+}
+
+.product-tag {
+  position: absolute;
+  z-index: 2;
+  font-size: 11px;
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: bold;
+  bottom: 30px;
+  left: 0;
+}
+
+.sale {
+  background: red;
+}
+
+.product-tag-item {
+  line-height: 20px;
+  width: 40px;
+  height: auto;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.product-price {
+    margin-top: 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+}
+
+.saleOff {
+  width: 48%;
+  text-decoration: line-through;
+  color: #777;
+  margin-left: 5px;
+}
+
+.tab-loadmore-btn {
+  width: 200px;
+  height: 60px;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  left: 24rem;
+}
+
+.btn {
+  background-color: #008838 !important;
+  color: #fff !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tab-loadmore {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  position: relative;
+}
 /*.about_left {*/
 /*  background: url("images/bg_info.png") left no-repeat;*/
 /*}*/

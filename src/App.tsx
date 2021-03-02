@@ -8,6 +8,7 @@ function App() {
   <Router>
       <div className="App">
           <Route exact path='/' component={Home}/>
+          <Route exact path='/:cate' component={Home}/>
       </div>
   </Router>
   );

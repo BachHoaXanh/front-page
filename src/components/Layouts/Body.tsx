@@ -78,6 +78,7 @@ const Body = (props: any) => {
                                 <Product
                                     key={index}
                                     product={item}
+                                    category={categories.find((each: any) => each.id === parseInt(item.categoryId))}
                                 />
                             );
                         })

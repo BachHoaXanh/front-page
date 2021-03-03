@@ -5,8 +5,8 @@ const showPrice = (price: number) => price.toString().replace(/\B(?=(\d{3})+(?!\
 const calculateSaleOffPrice = (price: number, saleOff: number) => showPrice(price - (price * (saleOff / 100)));
 
 const Product = (props: any) => {
-    const {product} = props;
-    const showDetail = () => props.history.push(`/products/${product.id}`);
+    const {product, category} = props;
+    const showDetail = () => props.history.push(`/${category.name}/${product.id}`);
 
     return (
         <div className="item_list">

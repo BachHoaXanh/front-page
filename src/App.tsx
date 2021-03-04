@@ -14,7 +14,7 @@ function App() {
                     <Route exact path='/' component={Home}/>
                     <Route exact path='/:cate' component={Home}/>
                     <Route exact path="/:cate/:id" component={ProductDetail}/>
-                    <Route exact path="/checkout" component={Checkout}/>
+                    <Route exact path="/cart/checkout" component={Checkout}/>
                 </div>
             </Router>
         </CartProvider>

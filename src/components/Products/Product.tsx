@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { withRouter } from "react-router";
 
 const showPrice = (price: number) => price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -20,11 +20,11 @@ const Product = (props: any) => {
                         ?
                         <div>
                             <div className="product-price flex-center">
+                                <div className="price">
+                                    {calculateSaleOffPrice(product.price, product.saleOff)} Đ
+                                </div>
                                 <div className="price saleOff">
                                     {showPrice(product.price)} Đ
-                                </div>
-                                <div className="price" style={{width: '48%'}}>
-                                    {calculateSaleOffPrice(product.price, product.saleOff)} Đ
                                 </div>
                             </div>
                             <div className="product-tag">

@@ -1,3 +1,7 @@
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faShoppingCart} from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+
 const Footer = () => {
     return (
         <footer>
@@ -32,15 +36,16 @@ const Footer = () => {
                 <div className="copy">
                     <section>
                         <span>Copyright ® 2021 </span>
-                        <label>
-                            <a href="#" title="Thiết kế website">Thiết kế website</a></label>
+                        <label>Thiết kế website</label>
                     </section>
                 </div>
             </div>
             <div className="footer_share">
                 <div className="cart">
-                    <a href="gio-hang.html" title="Cart">
-                        <img src="images/icon_cart.png" alt="cart"/>
+                    <a href="#" title="Cart">
+                        <FontAwesomeIcon
+                            style={{fontSize: '2rem', marginTop: '13px', color: '#ffffff'}}
+                            icon={faShoppingCart}/>
                         <span className="notify-right" style={{backgroundImage: "url(images/icon_chat.png) no-repeat"}}
                               id="_notify_cart_count">0</span>
                     </a>

@@ -283,7 +283,8 @@ nav ul li ul li {
 }
 
 nav ul li ul li:hover {
-  background: #eeeeee;
+  background: #008838;
+  color: #ffffff;
 }
 
 nav ul li ul li h2 {
@@ -442,7 +443,9 @@ nav ul li ul li h2 a:hover {
 
 .div_title div, .div_title code {
   float: left;
-  padding-right: 10px
+  padding-right: 10px;
+  color: #008838;
+  margin-top: 1px;
 }
 
 .div_title div a {
@@ -634,6 +637,8 @@ nav ul li ul li h2 a:hover {
   margin-bottom: 15px;
   margin-left: -12px;
   width: calc(100% + 24px);
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .item {
@@ -791,7 +796,7 @@ nav ul li ul li h2 a:hover {
   color: #008838;
   font-weight: bold;
   line-height: 25px;
-  font-size: 1.1em;
+  font-size: 0.9em;
 }
 
 .price_old {
@@ -2327,7 +2332,7 @@ nav ul li ul li h2 a:hover {
   width: 55px;
   position: fixed;
   z-index: 2;
-  bottom: 25%;
+  bottom: 35%;
   left: 0;
 }
 
@@ -2420,7 +2425,7 @@ nav ul li ul li h2 a:hover {
   border-radius: 50%;
   height: 54px;
   width: 54px;
-  background: #039af5;
+  background: #008838;
   -webkit-box-shadow: 0 4px 5px -1px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 4px 5px -1px rgba(0, 0, 0, 0.5);
   box-shadow: 0 4px 5px -1px rgba(0, 0, 0, 0.5);
@@ -3253,7 +3258,7 @@ div.pagination span.disabled {
   color: #fff;
   font-family: sans-serif;
   font-weight: bold;
-  bottom: 30px;
+  bottom: 8px;
   left: 0;
 }
 
@@ -3270,8 +3275,6 @@ div.pagination span.disabled {
 }
 
 .product-price {
-    margin-top: 10px;
-    font-size: 0.9em;
     font-weight: bold;
 }
 
@@ -3279,13 +3282,12 @@ div.pagination span.disabled {
   justify-content: center;
   align-items: center;
   bottom: 0;
+  display: inline-block;
 }
 
 .saleOff {
-  width: 48%;
   text-decoration: line-through;
-  color: #777;
-  margin-left: 5px;
+  color: #999999;
 }
 
 .tab-loadmore-btn {
@@ -3294,7 +3296,6 @@ div.pagination span.disabled {
   font-size: 14px;
   font-weight: bold;
   position: relative;
-  left: 24rem;
 }
 
 .btn {
@@ -3310,6 +3311,19 @@ div.pagination span.disabled {
   margin-bottom: 20px;
   margin-top: 20px;
   position: relative;
+}
+
+.tab-loadmore-loading {
+  position: absolute;
+  top: 0;
+}
+
+.btn-nothover {
+  background-color: #008838 !important;
+  color: #fff !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /*.about_left {*/
 /*  background: url("images/bg_info.png") left no-repeat;*/

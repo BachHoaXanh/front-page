@@ -16,3 +16,9 @@ export function slugify(str: string) {
 
     return str;    // Trim - from end of text
 }
+
+export interface CategoryInterface {
+    categoryId: (number | string);
+    name: string;
+    count: number;
+}

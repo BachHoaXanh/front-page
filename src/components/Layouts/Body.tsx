@@ -1,45 +1,39 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router";
+import React, {useEffect, useState} from "react";
+import {useHistory} from "react-router";
 import axios from "axios";
-import { API_CATEGORIES } from "../../api.common";
+import {API_CATEGORIES} from "../../api.common";
 import Product from "../Products/Product";
-
-interface CategoryInterface {
-    categoryId: (number | string);
-    name: string;
-    count: number;
-}
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
+import {CategoryInterface} from "../../common";
 
 const Body = (props: any) => {
     const history = useHistory();
-    const [limit, setLimit] = useState(10);
+    const {sortedCategory} = props;
+    const [limit, setLimit] = useState(8);
     const [loading, setLoading] = useState(false);
+    const [products, setProducts] = useState([]);
+    const [categories, setCategories] = useState([]);
 
     const loadMore = () => {
-        setLoading(true)
+        setLoading(true);
         setTimeout(() => {
-            setLoading(false)
+            setLoading(false);
             setLimit(limit + 5);
         }, 1500);
     }
 
-    const [products, setProducts] = useState([]);
-    const [categories, setCategories] = useState([]);
-    const {sortedCategory} = props;
-
     const chooseCateLink = (categoryName: string) => history.push(`/${categoryName}`);
-
 
     useEffect(() => {
         setProducts(props.products);
-
         // List Categories
-        axios.get(`${API_CATEGORIES}`).then((res) => {
-            setCategories(res.data);
-        })
+        axios.get(`${API_CATEGORIES}`).then((res) => setCategories(res.data))
     }, [props.products]);
 
-    sortedCategory.forEach((item: any) => {
+    const limitProduct = products.slice(0, limit);
+
+    sortedCategory.forEach(async (item: any) => {
         const category: any = categories.find((each: any) => each.id === parseInt(item?.categoryId));
         item.name = category?.name;
     });
@@ -57,7 +51,9 @@ const Body = (props: any) => {
                             <li key={index} id={item.categoryId?.toString()} style={{cursor: 'pointer'}}>
                                 <h3>
                                     <div className="cateLink" onClick={() => chooseCateLink(item.name)}>
-                                        <i className="fa fa-caret-right"/>{item.name}
+                                        <FontAwesomeIcon icon={faAngleRight} className="breadcrumb-arrow"
+                                                         style={{marginRight: '0.5rem', marginTop: '1px'}}/>
+                                        {item.name}
                                     </div>
                                 </h3>
                                 <code>{item.count}</code>
@@ -73,7 +69,7 @@ const Body = (props: any) => {
                 </div>
                 <div className="box_list">
                     {
-                        products.map((item: any, index: number) => {
+                        limitProduct.map((item: any, index: number) => {
                             return (
                                 <Product
                                     key={index}
@@ -84,7 +80,7 @@ const Body = (props: any) => {
                         })
                     }
                 </div>
-                {(products.length > 10 && products.length >= limit) &&
+                {(products.length > 8 && products.length >= limit) &&
                 <div className="tab-loadmore flex-center">
                     <div className="tab-loadmore-btn btn" onClick={loadMore}>
                         Load More
@@ -92,7 +88,7 @@ const Body = (props: any) => {
                     {
                         loading &&
                         <div className="tab-loadmore-btn tab-loadmore-loading btn-nothover">
-                            <div className="loading-icon"/>
+                            <div>Loading...</div>
                         </div>
                     }
                 </div>

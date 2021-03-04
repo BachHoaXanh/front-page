@@ -1,8 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
-
-const showPrice = (price: number) => price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const calculateSaleOffPrice = (price: number, saleOff: number) => showPrice(price - (price * (saleOff / 100)));
+import { calculateSaleOffPrice, showPrice } from "../../common";
 
 const Product = (props: any) => {
     const {product, category} = props;
@@ -21,17 +19,17 @@ const Product = (props: any) => {
                         <div>
                             <div className="product-price flex-center">
                                 <div className="price">
-                                    {calculateSaleOffPrice(product.price, product.saleOff)} Đ
+                                    {calculateSaleOffPrice(product.price, product.saleOff)} đ
                                 </div>
                                 <div className="price saleOff">
-                                    {showPrice(product.price)} Đ
+                                    {showPrice(product.price)} đ
                                 </div>
                             </div>
                             <div className="product-tag">
                                 <div className="product-tag-item sale">{product.saleOff}%</div>
                             </div>
                         </div>
-                        : <div className="price">{showPrice(product.price)} Đ</div>
+                        : <div className="price">{showPrice(product.price)} đ</div>
                 }
             </a>
         </div>

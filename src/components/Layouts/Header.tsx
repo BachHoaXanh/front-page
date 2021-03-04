@@ -1,14 +1,8 @@
-import {CategoryInterface} from "../../common";
-import {useHistory} from "react-router";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faPlus, faSearch} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
-const Header = (props: any) => {
-    const history = useHistory();
-    const {categories} = props;
-    const chooseCateLink = (categoryName: string) => history.push(`/${categoryName}`);
-
+const Header = () => {
     return (
         <header>
             <div className="header_top">
@@ -24,37 +18,16 @@ const Header = (props: any) => {
                         <nav>
                             <ul>
                                 <li><a href="/" title="Trang chủ">Trang chủ</a></li>
-                                <li><a href="#" title="Tin tức">Tin tức</a></li>
-                                <li style={{position: 'relative'}}>
-                                    <a href="" title="Sản phẩm">Sản phẩm</a>
-                                    <i className="fa fa-angle-down"/>
-                                    <ul>
-                                        {
-                                            categories?.map((item: CategoryInterface, index: number) =>
-                                                <li key={index} id={item.categoryId?.toString()}
-                                                    style={{cursor: 'pointer'}}>
-                                                    <h2>
-                                                        <div title={item.name}
-                                                             onClick={() => chooseCateLink(item.name)}>
-                                                            <FontAwesomeIcon
-                                                                style={{fontSize: '12px', marginRight: '7px'}}
-                                                                icon={faPlus}/>
-                                                            {item.name}
-                                                        </div>
-                                                    </h2>
-                                                </li>
-                                            )
-                                        }
-                                    </ul>
-                                </li>
+                                <li><a href="/" title="Tin tức">Tin tức</a></li>
                             </ul>
                             <div className="logo">
-                                <a href='#' title="Fruit Shop"><img src={process.env.PUBLIC_URL + '/logo.png'}
-                                                                    alt="Fruit Shop"/></a>
+                                <a href='/' title="Fruit Shop">
+                                    <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Fruit Shop"/>
+                                </a>
                             </div>
                             <ol>
-                                <li><a href="#" title="Về chúng tôi">Về chúng tôi</a></li>
-                                <li><a href="#" title="Liên hệ">Liên hệ</a></li>
+                                <li><a href="/" title="Về chúng tôi">Về chúng tôi</a></li>
+                                <li><a href="/" title="Liên hệ">Liên hệ</a></li>
                                 <li className="search">
                                     <input id="txtSearch" type="text" className="cls_text"
                                            placeholder="Từ khóa cần tìm"/>
@@ -71,7 +44,8 @@ const Header = (props: any) => {
                         </nav>
                     </section>
                 </div>
-                <div className="header_img"><img src={process.env.PUBLIC_URL + '/top1_pattern.png'} alt="Fruit Shop"/>
+                <div className="header_img">
+                    <img src={process.env.PUBLIC_URL + '/top1_pattern.png'} alt="Fruit Shop"/>
                 </div>
             </div>
         </header>

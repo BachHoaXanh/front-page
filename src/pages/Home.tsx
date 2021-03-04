@@ -49,7 +49,7 @@ const Home = (props: any) => {
 
     return (
         <div className="Home">
-            <Header categories={sortedCategory}/>
+            <Header/>
             <Title/>
             <div className="box_pages" style={{paddingTop: "30px", paddingBottom: "20px", background: "#ffffff"}}>
                 <Body products={products} sortedCategory={sortedCategory}/>

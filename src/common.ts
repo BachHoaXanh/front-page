@@ -22,3 +22,7 @@ export interface CategoryInterface {
     name: string;
     count: number;
 }
+
+export const showPrice = (price: number) => price?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+export const calculateSaleOffPrice = (price: number, saleOff: number) => showPrice(price - (price * (saleOff / 100)));

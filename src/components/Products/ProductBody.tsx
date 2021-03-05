@@ -23,23 +23,36 @@ const ProductBody = ({product}: any) => {
                 <div className="img">
                     <figure><a data-fancybox="list-images"
                                title="KẸO HỒNG SÂM HIỆU KGC- SÂM CHÍNH PHỦ HÀN QUỐC 240GR"
-                               href="../files/product/keo-hong-sam-hieu-kgc-sam-chinh-phu-han-quoc-240gr-fem2nyzu.jpg">
-                        <img src="../files/product/keo-hong-sam-hieu-kgc-sam-chinh-phu-han-quoc-240gr-fem2nyzu.jpg"
+                               href="https://moclanfruit.com/thuc-pham/combo-heo-nga-441">
+                        <img src="https://moclanfruit.com/files/product/combo-heo-nga-bc2v9g0z.gif"
                              alt=""/></a></figure>
                     <aside className="slider_img">
                         <a data-fancybox="list-images"
                            title="ruou-sake-nishinoseki-hana-cmbnbztm.jpg"
-                           href="../files/product/ruou-sake-nishinoseki-hana-cmbnbztm.jpg"><span><img
-                            src="../files/product/ruou-sake-nishinoseki-hana-cmbnbztm.jpg"
-                            alt="ruou-sake-nishinoseki-hana-cmbnbztm.jpg-1"/></span></a>
+                           href="https://moclanfruit.com/thuc-pham/combo-heo-nga-441">
+                            <span>
+                                <img
+                                    src="https://moclanfruit.com/files/product/combo-heo-nga-bc2v9g0z.gif"
+                                    alt="ruou-sake-nishinoseki-hana-cmbnbztm.jpg-1"/>
+                            </span>
+                        </a>
                         <a data-fancybox="list-images" title="ruou-sake-nishinoseki-hana-tjhizasa.jpg"
-                           href="../files/product/ruou-sake-nishinoseki-hana-tjhizasa.jpg"><span><img
-                            src="../files/product/ruou-sake-nishinoseki-hana-tjhizasa.jpg"
-                            alt="ruou-sake-nishinoseki-hana-tjhizasa.jpg-2"/></span></a>
+                           href="https://moclanfruit.com/thuc-pham/combo-heo-nga-441">
+                            <span>
+                                <img
+                                    src="https://moclanfruit.com/files/product/combo-heo-nga-bc2v9g0z.gif"
+                                    alt="ruou-sake-nishinoseki-hana-tjhizasa.jpg-2"/>
+                            </span>
+                        </a>
                         <a data-fancybox="list-images" title="ruou-sake-nishinoseki-hana-300ml-hk3ywgtk.jpg"
-                           href="../files/product/ruou-sake-nishinoseki-hana-300ml-hk3ywgtk.jpg"><span><img
-                            src="../files/product/ruou-sake-nishinoseki-hana-300ml-hk3ywgtk.jpg"
-                            alt="ruou-sake-nishinoseki-hana-300ml-hk3ywgtk.jpg-3"/></span></a></aside>
+                           href="https://moclanfruit.com/thuc-pham/combo-heo-nga-441">
+                            <span>
+                                <img
+                                    src="https://moclanfruit.com/files/product/combo-heo-nga-bc2v9g0z.gif"
+                                    alt="ruou-sake-nishinoseki-hana-300ml-hk3ywgtk.jpg-3"/>
+                            </span>
+                        </a>
+                    </aside>
                 </div>
                 <div className="pro_short"><h1>{product?.name}</h1>
                     <aside className="short_content">{product?.shortDescription}</aside>
@@ -50,12 +63,12 @@ const ProductBody = ({product}: any) => {
                                 ?
                                 <div className="boxPrice">
                                     <span className="n_prices">
-                                        {calculateSaleOffPrice(product?.price, product?.saleOff)} đ
+                                        {calculateSaleOffPrice(product?.price, product?.saleOff)}<sup>₫</sup>
                                     </span>
-                                    <span className="n_prices2">{showPrice(product?.price)} đ</span>
+                                    <span className="n_prices2">{showPrice(product?.price)}<sup>₫</sup></span>
                                     <label>- {product?.saleOff}%</label>
                                 </div>
-                                : <span className="n_prices">{showPrice(product?.price)} đ</span>
+                                : <span className="n_prices">{showPrice(product?.price)}<sup>₫</sup></span>
                         }
                     </div>
                     <div className="soluong"><label>Số lượng</label>

@@ -41,7 +41,7 @@ const Footer = () => {
             <div className="footer_bottom">
                 <div className="f_parten">
                     <figure>
-                        <img src={"footer_pattern.png"} alt="Fruit Shop"/>
+                        <img src={process.env.PUBLIC_URL + "/footer_pattern.png"} alt="Fruit Shop"/>
                     </figure>
                 </div>
                 <div className="copy">

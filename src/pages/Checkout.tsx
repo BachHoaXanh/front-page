@@ -10,7 +10,9 @@ const Checkout = () => {
         <div className="Checkout">
             <Header/>
             <Title/>
-            <CheckoutBody/>
+            <div className="box_pages" style={{ backgroundColor: '#ffffff'}}>
+                <CheckoutBody/>
+            </div>
             <Footer/>
         </div>
     );

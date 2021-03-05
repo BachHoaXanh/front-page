@@ -89,6 +89,22 @@ export function CartProvider(props: any) {
         getTotal(virtualCart);
     }
 
+    const minusCount = (event: any) => {
+        const id = event.target.id;
+        const virtualCart = [...cartItems] as any;
+
+        for (let i=0;i<virtualCart.length;i++) {
+            if (virtualCart[i].id === id) {
+                if (virtualCart[i].count > 1) {
+                    virtualCart[i].count = virtualCart[i].count - 1
+                }
+            }
+        }
+        localStorage.setItem('cart', JSON.stringify(virtualCart))
+        setCartItems(virtualCart)
+        getTotal(virtualCart)
+    }
+
     const plusCount = (event: any) => {
         const id = event.target.id;
         const virtualCart = [...cartItems] as any;

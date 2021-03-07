@@ -1,7 +1,5 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {useHistory} from "react-router";
-import axios from "axios";
-import {API_CATEGORIES} from "../../api.common";
 import Product from "../Products/Product";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
@@ -9,11 +7,9 @@ import {CategoryInterface} from "../../common";
 
 const Body = (props: any) => {
     const history = useHistory();
-    const {sortedCategory} = props;
+    const {sortedCategory, products} = props;
     const [limit, setLimit] = useState(8);
     const [loading, setLoading] = useState(false);
-    const [products, setProducts] = useState([]);
-    const [categories, setCategories] = useState([]);
 
     const loadMore = () => {
         setLoading(true);
@@ -23,20 +19,9 @@ const Body = (props: any) => {
         }, 1500);
     }
 
-    const chooseCateLink = (categoryName: string) => history.push(`/${categoryName}`);
-
-    useEffect(() => {
-        setProducts(props.products);
-        // List Categories
-        axios.get(`${API_CATEGORIES}`).then((res) => setCategories(res.data))
-    }, [props.products]);
+    const chooseCateLink = (categorySlug: string) => history.push(`/categories/${categorySlug}`);
 
     const limitProduct = products.slice(0, limit);
-
-    sortedCategory.forEach(async (item: any) => {
-        const category: any = categories.find((each: any) => each.id === parseInt(item?.categoryId));
-        item.name = category?.name;
-    });
 
     return (
         <section>
@@ -50,7 +35,7 @@ const Body = (props: any) => {
                         {sortedCategory.map((item: CategoryInterface, index: number) =>
                             <li key={index} id={item.categoryId?.toString()} style={{cursor: 'pointer'}}>
                                 <h3>
-                                    <div className="cateLink" onClick={() => chooseCateLink(item.name)}>
+                                    <div className="cateLink" onClick={() => chooseCateLink(item.slug)}>
                                         <FontAwesomeIcon icon={faAngleRight} className="breadcrumb-arrow"
                                                          style={{marginRight: '0.5rem', marginTop: '1px'}}/>
                                         {item.name}
@@ -74,7 +59,7 @@ const Body = (props: any) => {
                                 <Product
                                     key={index}
                                     product={item}
-                                    category={categories.find((each: any) => each.id === parseInt(item.categoryId))}
+                                    category={sortedCategory.find((each: any) => each.categoryId === parseInt(item.categoryId))}
                                 />
                             );
                         })

@@ -2,8 +2,10 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCartPlus} from "@fortawesome/free-solid-svg-icons";
 import React, {useContext, useEffect, useState} from "react";
 import {CartContext} from "../../contexts/Cart";
+import {useHistory} from "react-router";
 
 const Footer = () => {
+    const history = useHistory();
     const {cartItems, clickedCart} = useContext(CartContext);
     const [totalCart, setTotalCart] = useState(0);
 
@@ -13,6 +15,8 @@ const Footer = () => {
         cartItems.forEach((item: any) => totalCartVirtual += item.count);
         setTotalCart(totalCartVirtual)
     }, [clickedCart, cartItems]);
+
+    const checkout = () => history.push('/checkout');
 
     return (
         <footer>
@@ -53,7 +57,7 @@ const Footer = () => {
             </div>
             <div className="footer_share">
                 <div className="cart">
-                    <a href="#" title="Cart">
+                    <a onClick={checkout} title="Cart">
                         <FontAwesomeIcon style={{fontSize: '2rem', marginTop: '13px', color: '#ffffff'}}
                                          icon={faCartPlus}/>
                         <span className="notify-right cart-total" id="_notify_cart_count">{totalCart}</span>

@@ -1,12 +1,17 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faSearch, faPhoneAlt} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
-const Header = () => {
+const Header = (props: any) => {
+    const handleClick = () => alert('Coming soon...')
     return (
         <header>
             <div className="header_top">
                 <section>
+                    <div className="header_sales">
+                        <FontAwesomeIcon icon={faPhoneAlt} style={{marginRight: '5px'}}/>
+                        <span>0762 123 456 - 0123 456 789</span>
+                    </div>
                     <div className="h_right">
                         <label><b>FRUIT SHOP</b> - CHUYÊN HÀNG TRÁI CÂY NHẬP KHẨU CAO CẤP</label>
                     </div>
@@ -17,8 +22,18 @@ const Header = () => {
                     <section>
                         <nav>
                             <ul>
-                                <li><a href="/" title="Trang chủ">Trang chủ</a></li>
-                                <li><a href="/" title="Tin tức">Tin tức</a></li>
+                                <li className={props.activeHome && 'active'}>
+                                    <a href="/" title="Trang chủ">Trang chủ</a>
+                                </li>
+                                <li className={props.activeAbout && 'active'}>
+                                    <a onClick={handleClick} title="Về chúng tôi">Về chúng tôi</a>
+                                </li>
+                                <li className={props.activeProducts && 'active'}>
+                                    <a href="/products" title="Sản phẩm">Sản phẩm</a>
+                                </li>
+                                <li className={props.activeNews && 'active'}>
+                                    <a onClick={handleClick} title="Tin tức">Tin tức</a>
+                                </li>
                             </ul>
                             <div className="logo">
                                 <a href='/' title="Fruit Shop">
@@ -26,8 +41,12 @@ const Header = () => {
                                 </a>
                             </div>
                             <ol>
-                                <li><a href="/" title="Về chúng tôi">Về chúng tôi</a></li>
-                                <li><a href="/" title="Liên hệ">Liên hệ</a></li>
+                                <li className={props.activeSale && 'active'}>
+                                    <a onClick={handleClick} title="Khuyến mãi">Khuyến mãi</a>
+                                </li>
+                                <li className={props.activeContact && 'active'}>
+                                    <a onClick={handleClick} title="Liên hệ">Liên hệ</a>
+                                </li>
                                 <li className="search">
                                     <input id="txtSearch" type="text" className="cls_text"
                                            placeholder="Từ khóa cần tìm"/>

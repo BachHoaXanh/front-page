@@ -20,6 +20,7 @@ export function slugify(str: string) {
 export interface CategoryInterface {
     categoryId: (number | string);
     name: string;
+    slug: string;
     count: number;
 }
 

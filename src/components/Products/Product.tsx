@@ -3,8 +3,8 @@ import { withRouter } from "react-router";
 import { calculateSaleOffPrice, showPrice } from "../../common";
 
 const Product = (props: any) => {
-    const {product, category} = props;
-    const showDetail = () => props.history.push(`/${category.name}/${product.id}`);
+    const {product} = props;
+    const showDetail = () => props.history.push(`/products/${product.id}`);
 
     return (
         <div className="item_list">

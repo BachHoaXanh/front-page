@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Header from "../components/Layouts/Header";
-import Title from "../components/Layouts/Title";
+import Breadcrumb from "../components/Layouts/Breadcrumb";
 import Footer from "../components/Layouts/Footer";
 import ProductBody from "../components/Products/ProductBody";
 import axios from "axios";
@@ -16,8 +16,9 @@ const ProductDetail = (props: any) => {
 
     return (
         <div className="product-detail">
-            <Header/>
-            <Title
+            <Header activeProducts={true}/>
+            <Breadcrumb
+                activeProduct={true}
                 category={props.match.params.cate}
                 product={product}
             />

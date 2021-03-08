@@ -141,6 +141,8 @@ export function CartProvider(props: any) {
                 removeFromCart,
                 plusCount,
                 updateCount,
+                setTotal,
+                setCartItems,
                 total
             }}
         >

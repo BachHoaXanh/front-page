@@ -3368,6 +3368,18 @@ div.pagination span.disabled {
 .cart-total {
   background: url(https://moclanfruit.com/images/icon_chat.png) no-repeat;
 }
+
+.validation {
+  float: right;
+  color: red;
+  font-size: 12px;
+  margin-right: 19px;
+  margin-top: 5px;
+}
+
+.error-input {
+  border: 1px solid red!important;
+}
 /*.about_left {*/
 /*  background: url("images/bg_info.png") left no-repeat;*/
 /*}*/

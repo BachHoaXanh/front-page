@@ -27,3 +27,6 @@ export interface CategoryInterface {
 export const showPrice = (price: number) => price?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 export const calculateSaleOffPrice = (price: number, saleOff: number) => showPrice(price - (price * (saleOff / 100)));
+
+export const ERROR_MESSAGE = 'Something went wrong. Please try again later.';
+export const ORDER_SUCCESS_MESSAGE = 'Thank you. Your order has been received.';

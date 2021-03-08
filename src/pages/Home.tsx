@@ -9,7 +9,7 @@ const Home = () => {
         <div className="Home">
             <Header activeHome={true}/>
             <article>
-                <div className="box_banners">
+                <div className="box_banners" style={{overflow: 'hidden'}}>
                     <div id="jssor_1"
                          style={{
                              position: 'relative',

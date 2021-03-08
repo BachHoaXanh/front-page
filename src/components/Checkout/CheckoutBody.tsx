@@ -7,12 +7,12 @@ import { showPrice } from "../../common";
 
 const CheckoutBody = () => {
     const {cartItems, minusCount, plusCount, removeFromCart, updateCount, total} = useContext(CartContext);
-    const [name, setName] = useState();
-    const [phone, setPhone] = useState();
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [address, setAddress] = useState('');
     const [note, setNote] = useState('');
-    console.log(name);
+
     return (
         <section>
             <div className="pages_left">
@@ -22,38 +22,39 @@ const CheckoutBody = () => {
                         <div className="row-infor">
                             <label>Họ và tên</label>
                             <input className="ev_check" name="_name"
-                                   id="_cart_name" type="text" value={name} onChange={() => {
-                                       setName(name)
-                                console.log(name)
-
-                            }}
+                                   id="_cart_name" type="text" value={name}
+                                   onChange={(e: any) => setName(e.target.value)}
                                    placeholder="Họ và tên "/>
                             <span className="text-error"/>
                         </div>
                         <div className="row-infor">
                             <label>Số điện thoại</label>
                             <input className="ev_check" name="_phone"
-                                   id="_cart_phone" type="text"
+                                   id="_cart_phone" type="number" value={phone}
+                                   onChange={(e: any) => setPhone(e.target.value)}
                                    placeholder="Nhập số diện thoại"/>
                             <span className="text-error"/>
                         </div>
                         <div className="row-infor">
                             <label>Email</label>
                             <input className="ev_check" name="_email"
-                                   id="_cart_email" type="email"
+                                   id="_cart_email" type="email" value={email}
+                                   onChange={(e: any) => setEmail(e.target.value)}
                                    placeholder="Nhập địa chỉ Email"/>
                             <span className="text-error"/>
                         </div>
                         <div className="row-infor">
                             <label>Địa chỉ</label>
                             <input className="ev_check" name="_address"
-                                   id="_cart_address" type="text"
+                                   id="_cart_address" type="text" value={address}
+                                   onChange={(e: any) => setAddress(e.target.value)}
                                    placeholder="Nhập địa chỉ đầy đủ: số nhà, tên đường"/>
                             <span className="text-error"/>
                         </div>
                         <div className="row-infor">
                             <label><p>Nội dung</p></label>
-                            <textarea name="_note" itemType={'text'}/>
+                            <textarea name="_note" itemType={'text'} value={note}
+                                      onChange={(e: any) => setNote(e.target.value)}/>
                             <span className="text-error"/>
                         </div>
                     </div>
@@ -112,8 +113,6 @@ const CheckoutBody = () => {
                                 </tr>
                                 {
                                     cartItems.map((item: any, index: number) => {
-                                        console.log('item', item)
-                                        console.log('index', index)
                                         return (
                                             <tr className="infor_table cart-item2" key={index}>
                                                 <td className="infor_product">
@@ -152,7 +151,8 @@ const CheckoutBody = () => {
                                                 }}>
                                                     <div className="cart-product-delete" onClick={removeFromCart}
                                                          id={item.id}>
-                                                        <FontAwesomeIcon style={{pointerEvents: 'none'}} icon={faTimes}/>
+                                                        <FontAwesomeIcon style={{pointerEvents: 'none'}}
+                                                                         icon={faTimes}/>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -181,9 +181,7 @@ const CheckoutBody = () => {
                             </table>
                         </div>
                         <div className="row-button-order">
-                            <button id="submitCart" className="_btn-order">
-                                Gửi đơn hàng
-                            </button>
+                            <button id="submitCart" className="_btn-order">Gửi đơn hàng</button>
                         </div>
                     </div>
                 }

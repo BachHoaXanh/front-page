@@ -1,3 +1,5 @@
+import {HOST} from "./api.common";
+
 export function slugify(str: string) {
     str = str.replace(/^\s+|\s+$/g, ''); // trim
     str = str.toLowerCase();
@@ -30,3 +32,11 @@ export const calculateSaleOffPrice = (price: number, saleOff: number) => showPri
 
 export const ERROR_MESSAGE = 'Something went wrong. Please try again later.';
 export const ORDER_SUCCESS_MESSAGE = 'Thank you. Your order has been received.';
+
+export const removePrefixUpload = (path: string) => path.replace('upload', '');
+
+export function showThumbnail(product: any): string {
+    return product?.images?.length > 0
+        ? `${HOST}/${removePrefixUpload(product.images[0].path)}`
+        : `${process.env.PUBLIC_URL}/gogouya-fruits.jpg`;
+}

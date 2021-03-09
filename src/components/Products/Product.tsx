@@ -1,6 +1,6 @@
 import React from "react";
-import { withRouter } from "react-router";
-import { calculateSaleOffPrice, showPrice } from "../../common";
+import {withRouter} from "react-router";
+import {calculateSaleOffPrice, showPrice, showThumbnail} from "../../common";
 
 const Product = (props: any) => {
     const {product} = props;
@@ -8,12 +8,9 @@ const Product = (props: any) => {
 
     return (
         <div className="item_list">
-            <a onClick={showDetail}>
+            <div onClick={showDetail}>
                 <figure>
-                    {/*<img src={product.images[0]?.path} alt="product thumbnail"/>*/}
-                    {/* TODO Replace by image url */}
-                    <img src="https://moclanfruit.com/files/product/combo-heo-nga-bc2v9g0z.gif"
-                         alt="COMBO Heo Nga"/>
+                    <img src={showThumbnail(product)} alt="product thumbnail"/>
                 </figure>
                 <h4>{product.name}</h4>
                 {
@@ -34,7 +31,7 @@ const Product = (props: any) => {
                         </div>
                         : <div className="price">{showPrice(product.price)}<sup>₫</sup></div>
                 }
-            </a>
+            </div>
         </div>
     );
 }

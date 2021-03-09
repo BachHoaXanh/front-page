@@ -1,7 +1,8 @@
 import React, {useContext, useState} from 'react';
 import {withRouter} from "react-router";
-import {calculateSaleOffPrice, showPrice} from "../../common";
+import {calculateSaleOffPrice, removePrefixUpload, showPrice, showThumbnail} from "../../common";
 import {CartContext} from "../../contexts/Cart";
+import {HOST} from "../../api.common";
 
 const ProductBody = ({product}: any) => {
     const {addToCart} = useContext(CartContext);
@@ -21,38 +22,26 @@ const ProductBody = ({product}: any) => {
         <section>
             <div className="short_detail">
                 <div className="img">
-                    <figure><a data-fancybox="list-images"
-                               title="KẸO HỒNG SÂM HIỆU KGC- SÂM CHÍNH PHỦ HÀN QUỐC 240GR"
-                               href="https://moclanfruit.com/thuc-pham/combo-heo-nga-441">
-                        <img src="https://moclanfruit.com/files/product/combo-heo-nga-bc2v9g0z.gif"
-                             alt=""/></a></figure>
-                    <aside className="slider_img">
-                        <a data-fancybox="list-images"
-                           title="ruou-sake-nishinoseki-hana-cmbnbztm.jpg"
-                           href="https://moclanfruit.com/thuc-pham/combo-heo-nga-441">
-                            <span>
-                                <img
-                                    src="https://moclanfruit.com/files/product/combo-heo-nga-bc2v9g0z.gif"
-                                    alt="ruou-sake-nishinoseki-hana-cmbnbztm.jpg-1"/>
-                            </span>
+                    <figure>
+                        <a data-fancybox="list-images" target={'_blank'} rel="noreferrer noopener"
+                           href={showThumbnail(product)}>
+                            <img src={showThumbnail(product)} alt=""/>
                         </a>
-                        <a data-fancybox="list-images" title="ruou-sake-nishinoseki-hana-tjhizasa.jpg"
-                           href="https://moclanfruit.com/thuc-pham/combo-heo-nga-441">
-                            <span>
-                                <img
-                                    src="https://moclanfruit.com/files/product/combo-heo-nga-bc2v9g0z.gif"
-                                    alt="ruou-sake-nishinoseki-hana-tjhizasa.jpg-2"/>
-                            </span>
-                        </a>
-                        <a data-fancybox="list-images" title="ruou-sake-nishinoseki-hana-300ml-hk3ywgtk.jpg"
-                           href="https://moclanfruit.com/thuc-pham/combo-heo-nga-441">
-                            <span>
-                                <img
-                                    src="https://moclanfruit.com/files/product/combo-heo-nga-bc2v9g0z.gif"
-                                    alt="ruou-sake-nishinoseki-hana-300ml-hk3ywgtk.jpg-3"/>
-                            </span>
-                        </a>
-                    </aside>
+                    </figure>
+                    {
+                        product?.images?.length > 0 &&
+                        <aside className="slider_img">
+                            {product.images.map((item: any, index: number) =>
+                                <a data-fancybox="list-images" target={'_blank'} rel="noreferrer noopener" key={index}
+                                   href={`${HOST}/${removePrefixUpload(item.path)}`}>
+                                    <span>
+                                        <img src={`${HOST}/${removePrefixUpload(item.path)}`} alt=""/>
+                                    </span>
+                                </a>
+                            )}
+                        </aside>
+
+                    }
                 </div>
                 <div className="pro_short"><h1>{product?.name}</h1>
                     <aside className="short_content">{product?.shortDescription}</aside>

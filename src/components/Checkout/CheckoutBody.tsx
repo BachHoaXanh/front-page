@@ -1,13 +1,14 @@
-import {withRouter} from "react-router";
+import {useHistory, withRouter} from "react-router";
 import React, {useContext, useState} from "react";
 import {CartContext} from "../../contexts/Cart";
 import {faTimes} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {ORDER_SUCCESS_MESSAGE, showPrice} from "../../common";
+import {calculateSaleOffPrice, ORDER_SUCCESS_MESSAGE, showPrice, showThumbnail} from "../../common";
 import axios from "axios";
 import {API_ORDERS} from "../../api.common";
 
 const CheckoutBody = () => {
+    const history = useHistory();
     const {cartItems, minusCount, plusCount, removeFromCart, updateCount, total, setCartItems, setTotal} = useContext(CartContext);
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
@@ -197,15 +198,11 @@ const CheckoutBody = () => {
                                         return (
                                             <tr className="infor_table cart-item2" key={index}>
                                                 <td className="infor_product">
-                                                    <a className="links" title="COMBO Heo Nga"
-                                                       href="https://moclanfruit.com/thuc-pham/combo-heo-nga-441">
-                                                        <figure>
-                                                            <img
-                                                                src="https://moclanfruit.com/files/product/combo-heo-nga-bc2v9g0z.gif"
-                                                                alt="COMBO Heo Nga"/>
-                                                        </figure>
+                                                    <div className="links"
+                                                       onClick={() => history.push(`/products/${item.id}`)}>
+                                                        <figure><img src={showThumbnail(item)} alt=""/></figure>
                                                         <h3>{item.name}</h3>
-                                                    </a>
+                                                    </div>
                                                 </td>
                                                 <td>
                                                     <div className="choosenumber infor_number">
@@ -220,7 +217,7 @@ const CheckoutBody = () => {
                                                 <td>
                                                     <p className="infor_price ev_price">
                                                         <span className="_cart_price">
-                                                            {showPrice(item.price)}
+                                                            {calculateSaleOffPrice(item.price, item.saleOff)}
                                                         </span><sup>₫</sup>
                                                     </p>
                                                 </td>

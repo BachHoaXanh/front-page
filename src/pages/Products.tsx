@@ -61,8 +61,6 @@ const Products = (props: any) => {
         });
     }, [cate]);
 
-    console.log('sorted', sortedCategory)
-
     return (
         <div className="Home">
             <Header activeProducts={true}/>

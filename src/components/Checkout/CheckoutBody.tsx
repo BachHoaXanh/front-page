@@ -15,7 +15,7 @@ const CheckoutBody = () => {
     const [address, setAddress] = useState('');
     const [note, setNote] = useState('');
     const [shippingNote, setShippingNote] = useState('');
-    // const [payment, setPayment] = useState('COD');
+    const [payment, setPayment] = useState('COD');
     const shippingFee = 30000;
 
     // Validation
@@ -75,11 +75,13 @@ const CheckoutBody = () => {
         setShippingNote('');
     }
 
+    const checkedPayment = (event: any) => setPayment(event.target.value);
+
     const handleSubmit = () => {
         const flag = validate(name, phone, email, address);
 
         flag && axios.post(`${API_ORDERS}`, {
-            name, email, address, note, shippingNote,
+            name, email, address, note, shippingNote, payment,
             customerId: 1,
             phone: +phone,
             products: cartItems,
@@ -102,7 +104,7 @@ const CheckoutBody = () => {
                             <label>Họ và tên *</label>
                             <input name="_name" id="_cart_name" type="text" value={name}
                                    onChange={e => setName(e.target.value)} className={errorName ? 'error-input' : ''}
-                                   placeholder="Họ và tên "/>
+                                   placeholder="Nhập họ và tên "/>
                             {errorName && <><br/><span className="validation">{errorName}</span></>}
                         </div>
                         <div className="row-infor">
@@ -138,11 +140,13 @@ const CheckoutBody = () => {
                     <div className="left_top-infor">
                         <div className="delivery">
                             <div className="dl_checker">
-                                <input id="_cart_payment_1" name="_cart_payment" type="radio" checked value="1"/>
+                                <input id="_cart_payment_1" name="_cart_payment" type="radio" defaultChecked={true}
+                                       value="COD" onClick={checkedPayment}/>
                                 <label htmlFor="_cart_payment_1">Giao hàng và thu tiền tại nhà</label>
                             </div>
                             <div className="dl_checker">
-                                <input id="_cart_payment_3" name="_cart_payment" type="radio" value="3"/>
+                                <input id="_cart_payment_3" name="_cart_payment" type="radio"
+                                       value="ATM" onClick={checkedPayment}/>
                                 <label htmlFor="_cart_payment_3">Chuyển khoản qua máy ATM &amp; Ngân hàng</label>
                             </div>
                         </div>

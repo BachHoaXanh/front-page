@@ -77,7 +77,7 @@ export function CartProvider(props: any) {
     }
 
     const removeFromCart = (event: any) => {
-        const id = event.target.id;
+        const id = +event.target.id;
         const virtualCart = [...cartItems] as any;
 
         for (let i = 0; i < virtualCart.length; i++) {
@@ -90,7 +90,7 @@ export function CartProvider(props: any) {
     }
 
     const minusCount = (event: any) => {
-        const id = event.target.id;
+        const id = +event.target.id;
         const virtualCart = [...cartItems] as any;
 
         for (let i=0;i<virtualCart.length;i++) {
@@ -106,7 +106,7 @@ export function CartProvider(props: any) {
     }
 
     const plusCount = (event: any) => {
-        const id = event.target.id;
+        const id = +event.target.id;
         const virtualCart = [...cartItems] as any;
 
         for (let i = 0; i < virtualCart.length; i++) {
@@ -140,6 +140,7 @@ export function CartProvider(props: any) {
                 clickedCart,
                 removeFromCart,
                 plusCount,
+                minusCount,
                 updateCount,
                 setTotal,
                 setCartItems,

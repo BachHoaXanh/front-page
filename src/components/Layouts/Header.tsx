@@ -1,14 +1,11 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSearch, faPhoneAlt} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import { useHistory } from "react-router";
+import {useHistory} from "react-router";
 
 const Header = (props: any) => {
     const history = useHistory();
-
-    const handleClick = (page?: string) => {
-        page ? history.push(`/${page}`) : history.push(`/`);
-    };
+    const handleClick = (page?: string) => page ? history.push(`/${page}`) : history.push(`/`);
 
     return (
         <header>
@@ -28,18 +25,19 @@ const Header = (props: any) => {
                     <section>
                         <nav>
                             <ul>
-                                <li className={props.activeHome && 'active'}>
-                                    <a onClick={() => handleClick()} title="Trang chủ">Trang chủ</a>
+                                <li onClick={() => handleClick()} className={props.activeHome && 'active'}>
+                                    <a title="Trang chủ">Trang chủ</a>
                                 </li>
-                                <li className={props.activeAbout && 'active'}>
-                                    <a onClick={() => handleClick()} title="Về chúng tôi">Về chúng tôi</a>
+                                <li onClick={() => handleClick('about')} className={props.activeAbout && 'active'}>
+                                    <a title="Về chúng tôi">Về chúng tôi</a>
                                 </li>
-                                <li className={props.activeProducts && 'active'}>
-                                    <a onClick={() => handleClick('products')} title="Sản phẩm">Sản phẩm</a>
+                                <li onClick={() => handleClick('products')}
+                                    className={props.activeProducts && 'active'}>
+                                    <a title="Sản phẩm">Sản phẩm</a>
                                 </li>
-                                <li className={props.activeNews && 'active'}>
-                                    <a onClick={() => handleClick()} title="Tin tức">Tin tức</a>
-                                </li>
+                                {/*<li onClick={() => handleClick('news')} className={props.activeNews && 'active'}>*/}
+                                {/*    <a title="Tin tức">Tin tức</a>*/}
+                                {/*</li>*/}
                             </ul>
                             <div className="logo">
                                 <a href='/' title="Fruit Shop">
@@ -47,11 +45,11 @@ const Header = (props: any) => {
                                 </a>
                             </div>
                             <ol>
-                                <li className={props.activeSale && 'active'}>
-                                    <a onClick={() => handleClick()} title="Khuyến mãi">Khuyến mãi</a>
-                                </li>
-                                <li className={props.activeContact && 'active'}>
-                                    <a onClick={() => handleClick()} title="Liên hệ">Liên hệ</a>
+                                {/*<li onClick={() => handleClick('sale')} className={props.activeSale && 'active'}>*/}
+                                {/*    <a title="Khuyến mãi">Khuyến mãi</a>*/}
+                                {/*</li>*/}
+                                <li onClick={() => handleClick('contact')} className={props.activeContact && 'active'}>
+                                    <a title="Liên hệ">Liên hệ</a>
                                 </li>
                                 <li className="search">
                                     <input id="txtSearch" type="text" className="cls_text"

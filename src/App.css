@@ -2015,7 +2015,8 @@ nav ul li ul li h2 a:hover {
 .f_about ul {
   float: left;
   width: calc(100% - 20px);
-  margin-left: 20px;
+  margin-left: 5px;
+  list-style-type: none;
 }
 
 .f_about ul li {
@@ -2180,7 +2181,6 @@ nav ul li ul li h2 a:hover {
 .f_pay {
   float: left;
   width: 100%;
-  margin-top: 20px;
   position: relative;
 }
 
@@ -3380,15 +3380,22 @@ div.pagination span.disabled {
 .error-input {
   border: 1px solid red!important;
 }
-/*.about_left {*/
-/*  background: url("images/bg_info.png") left no-repeat;*/
-/*}*/
+.about_left {
+  background: url("https://moclanfruit.com/images/bg_info.png") left no-repeat;
+}
 
-/*.about_title figure, .fl_title figure {*/
-/*  background: url("images/line_title.png") left center no-repeat;*/
-/*}*/
+.about_title figure, .fl_title figure {
+  background: url("https://moclanfruit.com/images/line_title.png") left center no-repeat;
+}
 
-/*.bg_contact {*/
-/*  background: url("images/bg_contact.jpg");*/
-/*  background-size: cover;*/
-/*}*/
+.bg_contact {
+  float: left;
+  width: 100%;
+  background: url("https://moclanfruit.com/images/bg_contact.jpg");
+  background-size: cover;
+}
+
+.box_contact ul li iframe {
+  height: 40rem;
+  width: 75rem;
+}

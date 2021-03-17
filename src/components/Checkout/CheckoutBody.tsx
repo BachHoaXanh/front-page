@@ -79,9 +79,7 @@ const CheckoutBody = () => {
     const checkedPayment = (event: any) => setPayment(event.target.value);
 
     const handleSubmit = () => {
-        const flag = validate(name, phone, email, address);
-
-        flag && axios.post(`${API_ORDERS}`, {
+        validate(name, phone, email, address) && axios.post(`${API_ORDERS}`, {
             name, email, address, note, shippingNote, payment,
             customerId: 1,
             phone: +phone,
@@ -199,7 +197,7 @@ const CheckoutBody = () => {
                                             <tr className="infor_table cart-item2" key={index}>
                                                 <td className="infor_product">
                                                     <div className="links"
-                                                       onClick={() => history.push(`/products/${item.id}`)}>
+                                                         onClick={() => history.push(`/products/${item.id}`)}>
                                                         <figure><img src={showThumbnail(item)} alt=""/></figure>
                                                         <h3>{item.name}</h3>
                                                     </div>

@@ -16,12 +16,33 @@ const Footer = () => {
         setTotalCart(totalCartVirtual)
     }, [clickedCart, cartItems]);
 
-    const checkout = () => history.push('/checkout');
+    const handleClick = (link?: string) => link ? history.push(`/${link}`) : history.push(`/`);
 
     return (
         <footer>
             <div className="footer_top">
                 <section>
+                    <div className="f_about">
+                        <div className="f_pay"><label>Nhận thanh toán</label>
+                            <figure><img src={process.env.PUBLIC_URL + '/thanh-toan.png'} alt="Mộc lan Fruit"/></figure>
+                        </div>
+                    </div>
+                    <div className="f_about"><label>Về chúng tôi</label>
+                        <ul>
+                            <li onClick={() => handleClick('about')} style={{cursor: 'pointer'}}>
+                                <a title="Về chúng tôi">Về chúng tôi</a>
+                            </li>
+                            <li onClick={() => handleClick('sale')} style={{cursor: 'pointer'}}>
+                                <a title="Khuyến mãi">Khuyến mãi</a>
+                            </li>
+                            <li onClick={() => handleClick('products')} style={{cursor: 'pointer'}}>
+                                <a title="Sản phẩm">Sản phẩm</a>
+                            </li>
+                            <li onClick={() => handleClick('news')} style={{cursor: 'pointer'}}>
+                                <a title="Tin tức">Tin tức</a>
+                            </li>
+                        </ul>
+                    </div>
                     <div className="f_contact"><label>Thông tin liên hệ</label>
                         <ol>
                             <li><b>FRUIT SHOP</b></li>
@@ -56,8 +77,8 @@ const Footer = () => {
                 </div>
             </div>
             <div className="footer_share">
-                <div className="cart">
-                    <a onClick={checkout} title="Cart">
+                <div className="cart" onClick={() => handleClick('checkout')}>
+                    <a title="Cart">
                         <FontAwesomeIcon style={{fontSize: '2rem', marginTop: '13px', color: '#ffffff'}}
                                          icon={faCartPlus}/>
                         <span className="notify-right cart-total" id="_notify_cart_count">{totalCart}</span>

@@ -18,7 +18,7 @@ const Products = (props: any) => {
             axios.get(`${API_PRODUCTS}`).then((res) => {
                 const activeCategory = data.data.filter((item: any) => item.isActive);
                 const virtualCate: any[] = [...res.data];
-                // Get all category
+                // Get all Categories
                 const sortedCate: any = Object.values(virtualCate.reduce((a, {categoryId}) => {
                     a[categoryId] = a[categoryId] || {categoryId, count: 0};
                     a[categoryId].count++;

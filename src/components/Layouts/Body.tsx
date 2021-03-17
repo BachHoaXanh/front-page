@@ -8,14 +8,14 @@ import {CategoryInterface} from "../../common";
 const Body = (props: any) => {
     const history = useHistory();
     const {sortedCategory, products} = props;
-    const [limit, setLimit] = useState(8);
+    const [limit, setLimit] = useState(12);
     const [loading, setLoading] = useState(false);
 
     const loadMore = () => {
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
-            setLimit(limit + 5);
+            setLimit(limit + 10);
         }, 1500);
     }
 

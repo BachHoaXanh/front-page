@@ -6,6 +6,7 @@ import {useHistory} from "react-router";
 const Header = (props: any) => {
     const history = useHistory();
     const handleClick = (page?: string) => page ? history.push(`/${page}`) : history.push(`/`);
+    const search = () => alert("This feature is coming soon ...");
 
     return (
         <header>
@@ -61,7 +62,7 @@ const Header = (props: any) => {
                                                          position: 'absolute',
                                                          top: '35%',
                                                          right: '5%'
-                                                     }}/>
+                                                     }} onClick={search}/>
                                 </li>
                             </ol>
                         </nav>

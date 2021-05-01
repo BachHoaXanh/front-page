@@ -102,7 +102,7 @@ const AboutUS = () => {
                                     <div style={{textAlign: 'center'}}>
                                         <figure className="image" style={{display: 'inline-block'}}>
                                             <img alt="" height="400" width="600"
-                                            src="https://moclanfruit.com/files/common/trai-cay-co-giup-tang-can-nhanh-chong-ay6uk.jpg"/>
+                                                 src="https://nongsansay.vn/wp-content/uploads/2019/08/hoa-qu%E1%BA%A3-s%E1%BA%A5y-kh%C3%B4.png"/>
                                             <figcaption>
                                                 <em>MỘC LAN FRUIT - Thế Giới Tr&aacute;i C&acirc;y Nhập Khẩu
                                                 Chất Lượng</em>
@@ -135,7 +135,7 @@ const AboutUS = () => {
                                     <div style={{textAlign: 'center'}}>
                                         <figure className="image" style={{display: 'inline-block'}}>
                                             <img alt="" height="450" width="700"
-                                                 src="https://moclanfruit.com/files/news/nhung-thuc-pham-nao-giup-tang-chieu-cao-hieu-qua-o-tre-tcis1iny.jpg"/>
+                                                 src="https://cdn.tgdd.vn/2020/09/CookRecipe/Avatar/sinh-to-bo-chuoi-kiwi-thumbnail.jpg"/>
                                             <figcaption>
                                                 <em>Tr&aacute;i C&acirc;y Xanh - Sạch chuẩn VietGap</em>
                                             </figcaption>
@@ -171,7 +171,7 @@ const AboutUS = () => {
                                     <div style={{textAlign: 'center'}}>
                                         <figure className="image" style={{display: 'inline-block'}}>
                                             <img alt="" height="400" width="600"
-                                                 src="https://moclanfruit.com/files/common/trai-cay-co-giup-tang-can-nhanh-chong-alaky.jpg"/>
+                                                 src="https://nongsansay.vn/wp-content/uploads/2020/05/trai-cay-say-kho-5.jpg"/>
                                             <figcaption><em>Thực phẩm - B&aacute;nh, kẹo nhập khẩu ATTP</em>
                                             </figcaption>
                                         </figure>
@@ -197,7 +197,7 @@ const AboutUS = () => {
                                     <div style={{textAlign: 'center'}}>
                                         <figure className="image" style={{display: 'inline-block'}}>
                                             <img alt="" height="400" width="600"
-                                                 src="https://moclanfruit.com/files/common/trai-cay-co-giup-tang-can-nhanh-chong-8stym.jpg"/>
+                                                 src="https://moclanfruit.com/files/common/cac-thuc-pham-bo-sung-duong-chat-cho-nguoi-mang-thai-jmzvh.jpg"/>
                                             <figcaption><em>Hải Sản nhập khẩu tươi ngon</em></figcaption>
                                         </figure>
                                     </div>
@@ -280,72 +280,14 @@ const AboutUS = () => {
                             </div>
                         </div>
                         <div className="box_right">
-                            <div className="fl_title"><label>Có thể bạn quan tâm</label>
-                                <figure/>
-                            </div>
-                            <div className="item_r">
-                                <a href="trai-cay/dau-giong-nhat-740.html" title="Dâu Giống Nhật">
-                                    <figure>
-                                        <img src="https://moclanfruit.com/files/product/tra-trai-cay-nokchawon-han-quoc-azywqzjn.gif" alt="Dâu Giống Nhật"/>
-                                    </figure>
-                                    <h4>Dâu Giống Nhật</h4>
-                                    <div className="price">Liên Hệ</div>
-                                </a>
-                            </div>
-                            <div className="item_r">
-                                <a href="sam/tinh-chat-hong-sam-6-nam-tuoi-kanghwa-320.html"
-                                   title="Tinh Chất Hồng Sâm 6 năm tuổi KangHwa">
-                                    <figure>
-                                        <img src="https://moclanfruit.com/files/product/cha-la-tuoi-do-an-do-gmtucaqm.jpg"
-                                             alt="Tinh Chất Hồng Sâm 6 năm tuổi KangHwa"/>
-                                    </figure>
-                                    <h4>Tinh Chất Hồng Sâm 6 năm tuổi KangHwa</h4>
-                                    <div className="price">2,000,000</div>
-                                </a>
-                            </div>
-                            <div className="item_r">
-                                <a href="gio-qua/a59-gio-trai-cay-nhap-khau-543.html"
-                                   title="A59 - Giỏ Trái Cây Nhập Khẩu">
-                                    <figure>
-                                        <img src="https://moclanfruit.com/files/product/nho-keo-candy-hearts-my-vjgoulvy.jpg"
-                                             alt="A59 - Giỏ Trái Cây Nhập Khẩu"/>
-                                    </figure>
-                                    <h4>A59 - Giỏ Trái Cây Nhập Khẩu</h4>
-                                    <div className="price">Liên Hệ</div>
-                                </a></div>
-                            <div className="item_r">
-                                <a href="hai-san/vem-xanh-chile-316.html" title="Vẹm Xanh Chile ">
-                                <figure>
-                                    <img src="https://moclanfruit.com/files/product/a169-hop-qua-tang-tet-6wvft7oy.jpg"
-                                             alt="Vẹm Xanh Chile "/>
-                                    </figure>
-                                <h4>Vẹm Xanh Chile </h4>
-                                <div className="price">250,000</div>
-                            </a>
-                            </div>
-                            <div className="item_r"><a href="banh-keo/banh-chocopie-dua-hau-hq-348gr-500.html"
-                                                       title="Bánh Chocopie Dưa Hấu HQ 348gr">
-                                <figure><img src="https://moclanfruit.com/files/product/sua-tam-on-han-quoc-bo3ss3ub.jpg"
-                                             alt="Bánh Chocopie Dưa Hấu HQ 348gr"/></figure>
-                                <h4>Bánh Chocopie Dưa Hấu HQ 348gr</h4>
-                                <div className="price">140,000</div>
-                            </a>
-                            </div>
-                            <div className="item_r"><a href="trai-cay/nho-xanh-green-seedless-my-583.html"
-                                                       title="Nho Xanh Green Seedless Mỹ ">
-                                <figure><img src="https://moclanfruit.com/files/product/chocolate-euro-baknotes-kqereud9.jpg"
-                                             alt="Nho Xanh Green Seedless Mỹ "/></figure>
-                                <h4>Nho Xanh Green Seedless Mỹ </h4>
-                                <div className="price">Liên Hệ</div>
-                            </a>
-                            </div>
+
                         </div>
                     </div>
                 </section>
             </div>
             <Footer/>
         </div>
-);
+    );
 }
 
 export default AboutUS;
